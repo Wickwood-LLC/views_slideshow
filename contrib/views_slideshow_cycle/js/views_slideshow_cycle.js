@@ -1,3 +1,4 @@
+//@ sourceURL=views_slideshow_cycle.js
 /**
  *  @file
  *  A simple jQuery Cycle Div Slideshow Rotator.
@@ -10,6 +11,10 @@
   Drupal.behaviors.viewsSlideshowCycle = {
     attach: function (context) {
       $('.views_slideshow_cycle_main:not(.viewsSlideshowCycle-processed)', context).addClass('viewsSlideshowCycle-processed').each(function() {
+        if ($(this).is(":hidden") && $(this).parents('.rpp-load-always').length) {
+          $(this).removeClass('viewsSlideshowCycle-processed');
+          return;
+        }
         var fullId = '#' + $(this).attr('id');
         var settings = Drupal.settings.viewsSlideshowCycle[fullId];
         settings.targetId = '#' + $(fullId + " :first").attr('id');
