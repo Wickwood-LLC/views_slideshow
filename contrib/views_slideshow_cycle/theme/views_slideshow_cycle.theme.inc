@@ -103,6 +103,7 @@ function template_preprocess_views_slideshow_cycle_main_frame(&$vars) {
 
     // Load our cycle js.
     drupal_add_js($module_path . '/js/views_slideshow_cycle.js');
+    drupal_add_js($module_path . '/js/rpp-slideshows.js');
 
     // Load the pause library.
     if (!empty($settings['pause_in_middle']) && $pause_path = _views_slideshow_cycle_pause_library_path()) {
