@@ -5,3 +5,6 @@ package = Views
 core = 7.x
 
 files[] = views_slideshow_plugin_style_slideshow.inc
+
+version = "7.x-3.10"
+project = "views_slideshow"
